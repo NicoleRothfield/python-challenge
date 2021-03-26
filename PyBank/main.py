@@ -2,6 +2,7 @@ import os
 import csv
 import locale
 
+#set $ to USA 
 locale.setlocale( locale.LC_ALL, '' )
 
 # Takes a decimal number and returns a string representing the value in currency notation.
@@ -30,11 +31,9 @@ with open(my_file, 'r') as csvfile:
         Months.append(row[0])
         ProfitsLosses.append(int(row[1]))
 
-#cleaned_csv = zip(date, profitslosses, Totalmonths)
 
     print(f"Financial Analysis")
     print("-----------------------------")
-    #for row in csvreader:
     print(f"Total Months: {len(Months)}" )
     print(f"Total: ${locale.currency(sum(ProfitsLosses), grouping=True)}")
     print(f"Average Change: ${str(round(sum(ProfitsLosses) / len(Months), 2))  }")
