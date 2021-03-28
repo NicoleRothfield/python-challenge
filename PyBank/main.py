@@ -56,7 +56,8 @@ with open(my_file, 'r') as csvfile:
     print(f"Greatest Increase in Profits: {Months[maxProfitMonthIndex + 1]} {currencyToString(maxProfit)}")
     print(f"Greatest Decrease in Profits: {Months[minProfitMonthIndex + 1]} {currencyToString(minProfit)}")
 
-file = open("FinancialAnalysis.txt","w+")
+output_file = os.path.join(os.getcwd(), 'analysis', "FinancialAnalysis.txt")
+file = open(output_file,"w+")
 
 file.write(f"Financial Analysis\n")
 file.write("-----------------------------\n")
