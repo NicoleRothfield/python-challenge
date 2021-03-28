@@ -1,7 +1,7 @@
 import os
 import csv
 
-#set path for file
+# set path for file
 election_file = os.path.join(os.getcwd(), 'Resources', "election_data.csv")
 
 
@@ -46,7 +46,9 @@ with open(election_file, 'r') as csvfile:
     for line in OutputLines:
         print(line)
 
-file = open("PollAnalysis.txt","w+")
+output_file = os.path.join(os.getcwd(), 'analysis', "PollAnalysis.txt")
+
+file = open(output_file,"w+")
 
 for line in OutputLines:
     file.write(line + "\n")
